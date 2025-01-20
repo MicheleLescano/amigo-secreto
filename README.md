@@ -23,7 +23,7 @@ Este projeto é uma aplicação web simples para organizar e sortear amigos em u
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://michelelescano.github.io/amigo-secreto
+   git clone https://michelelescano.github.io/amigo-secreto/
    ```
 
 2. **Acesse o diretório do projeto:**
