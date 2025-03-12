@@ -53,21 +53,6 @@ Este projeto não possui dependências externas além de fontes do Google Fonts 
 
 ---
 
-## Possíveis Problemas e Soluções
-
-### 1. **Os botões não funcionam ou a lista não é exibida:**
-   - Certifique-se de que o JavaScript está habilitado no navegador.
-   - Verifique se o arquivo `app.js` está no mesmo diretório que o `index.html`.
-   
-### 2. **O navegador não carrega as fontes:**
-   - Certifique-se de estar conectado à Internet.
-   - Verifique se o link do Google Fonts está correto no arquivo `index.html`.
-
-### 3. **A página está desatualizada:**
-   - Tente limpar o cache do navegador e recarregar a página usando `Ctrl + F5` (Windows) ou `Cmd + Shift + R` (Mac).
-
----
-
 ## Contribuições
 Sinta-se à vontade para abrir issues ou criar pull requests para melhorias no projeto. Toda ajuda é bem-vinda!
 
