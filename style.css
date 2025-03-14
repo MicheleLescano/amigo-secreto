@@ -160,3 +160,18 @@ ul {
 .button-draw:hover {
     background-color: var(--color-button-hover);
 }
+
+/* Mensagem final do sorteio */
+.final-message {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #2b9348;
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+    background-color: #d4edda;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #155724;
+    width: fit-content;
+}
