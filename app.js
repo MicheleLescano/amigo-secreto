@@ -1,4 +1,3 @@
-
 let listaDeAmigos = [];
 
 // Função para adicionar um nome à lista de amigos.
@@ -7,7 +6,7 @@ function adicionarAmigo() {
     const nome = input.value.trim(); // Obtém o valor do campo e o 'trim' remove espaços extras.
 
     if (nome === '') {
-        alert('Por favor, insira um nome válido.'); // Validação 
+        alert('Por favor, insira um nome válido.'); // Validação
         return;
     }
 
@@ -18,7 +17,7 @@ function adicionarAmigo() {
     }
 
     listaDeAmigos.push(nome); // Adiciona o nome na lista de amigos.
-    atualizarListaDeAmigos(); // Atualiza a  da lista na tela.
+    atualizarListaDeAmigos(); // Atualiza a  lista na tela.
     input.value = ''; // Limpa o campo de entrada.
 }
 
@@ -29,7 +28,7 @@ function atualizarListaDeAmigos() {
 
     listaDeAmigos.forEach((amigo, index) => {
         const item = document.createElement('li'); // Cria um novo nome na lista.
-        item.textContent = amigo; // Define o nome do amigo 
+        item.textContent = amigo; // Define o nome do amigo
 
         const botaoRemover = document.createElement('button'); // botão para remover o amigo.
         botaoRemover.textContent = 'Remover';
@@ -53,12 +52,17 @@ function sortearAmigo() {
         return;
     }
 
-    const copiaLista = [...listaDeAmigos]; // Cria uma cópia da lista para preservar a original.
-    const resultado = [];
+    let copiaLista = [...listaDeAmigos]; // Cria uma cópia da lista para preservar a original.
+    let resultado = [];
 
-    while (copiaLista.length > 0) {
-        const sorteado = copiaLista.splice(Math.floor(Math.random() * copiaLista.length), 1)[0]; // Sorteia um amigo.
-        resultado.push(sorteado); // Adiciona o amigo sorteado ao resultado.
+    for (let i = 0; i < listaDeAmigos.length; i++) {
+        let amigoSorteado;
+        do {
+            amigoSorteado = copiaLista[Math.floor(Math.random() * copiaLista.length)];
+        } while (amigoSorteado === listaDeAmigos[i]); // Garante que a pessoa não tire ela mesma
+
+        resultado.push({ amigo: listaDeAmigos[i], sorteado: amigoSorteado });
+        copiaLista = copiaLista.filter(nome => nome !== amigoSorteado);
     }
 
     exibirResultado(resultado); // Exibe o resultado do sorteio.
@@ -67,11 +71,18 @@ function sortearAmigo() {
 // Função para exibir o resultado do sorteio na tela.
 function exibirResultado(resultado) {
     const listaResultado = document.getElementById('resultado'); // Seleciona o resultado.
-    listaResultado.innerHTML = ''; // Limpa o nome anterior.
+    listaResultado.innerHTML = ''; // Limpa a lista anterior.
 
-    resultado.forEach((amigo, index) => {
+    resultado.forEach(par => {
         const item = document.createElement('li'); // Cria um novo item de lista.
-        item.textContent = `${index + 1}. ${amigo}`; // Define  a posição e o nome do amigo.
+        item.textContent = `${par.amigo} tirou ${par.sorteado}`; // Exibe a relação de amigos.
         listaResultado.appendChild(item); // Adiciona o nome na lista de resultado.
     });
+
+    // Exibir a mensagem final
+    const mensagemFinal = document.getElementById("mensagemFinal");
+    mensagemFinal.textContent = "O amigo secreto foi sorteado com sucesso! 🎉";
+    mensagemFinal.style.display = "block";
 }
+
+
