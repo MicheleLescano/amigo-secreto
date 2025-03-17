@@ -1,3 +1,4 @@
+
 :root {
     --color-primary: #4B69FD;
     --color-secondary: #FFF9EB;
@@ -174,4 +175,44 @@ ul {
     border-radius: 8px;
     border: 1px solid #155724;
     width: fit-content;
+}
+
+/* Efeito botão reiniciar */
+.button-restart {
+    background-color: var(--color-primary); /* Cor principal */
+    color: var(--color-white);
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: 2px solid #000;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Efeito ao passar o mouse */
+.button-restart:hover {
+    background-color: var(--color-button-hover);
+    transform: scale(1.05);
+}
+
+/* Efeito ao clicar */
+.button-restart:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Rodapé do site */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-button); /* Cor do rodapé */
+    color: var(--color-white);
+    text-align: center;
+    padding: 15px;
+    font-family: "Inter", sans-serif;
 }
